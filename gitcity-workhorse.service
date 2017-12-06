@@ -1,0 +1,16 @@
+[Unit]
+Description=GitCity WorkHorse Daeomn service
+After=network.target
+
+[Service]
+User=git
+Group=git
+ExecStart=/usr/bin/php /opt/gitcity-workhorse/srv.php
+WorkingDirectory=/var/opt/cakeapp/data/git-data
+Type=simple
+Restart=always
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

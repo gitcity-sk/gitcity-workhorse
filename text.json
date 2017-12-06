@@ -1,0 +1,1830 @@
+{
+  "server": "MayMeow Sock Server",
+  "response": "OK",
+  "code": "200",
+  "action": "GetContainers",
+  "data": [
+    {
+      "Id": "b3a98f5ed20af107b57d08313b5ed21810366899f963047ff12d57d35315e331",
+      "Names": [
+        "\/maymeowcloud_rsync_1"
+      ],
+      "Image": "maymeowcloud_rsync",
+      "ImageID": "sha256:a715e3e100de7568ed44ea644d91a97ff380f76b13a38195d5f08bd0199342ef",
+      "Command": "\/usr\/local\/bin\/run",
+      "Created": 1488751803,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 873,
+          "PublicPort": 32017,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "682742404bda0cf3bc8a1381822f58705edd413c6f45e9704030c0b4780b8881",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "maymeowcloud",
+        "com.docker.compose.service": "rsync",
+        "com.docker.compose.version": "1.10.0"
+      },
+      "State": "running",
+      "Status": "Up 5 days",
+      "HostConfig": {
+        "NetworkMode": "maymeowcloud_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "maymeowcloud_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "1bb1ca0bdd665aacfbcd5f9b598e7623019145b342839433b112c1e19fa2c688",
+            "EndpointID": "be7883839bc41bc38ee81e5f39244726b14bbff5e9e8b6d14d0f05e393ba21e2",
+            "Gateway": "172.19.0.1",
+            "IPAddress": "172.19.0.6",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:ac:13:00:06"
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "maymeowcloud_maymeowcloud_storage_buckets",
+          "Source": "\/var\/lib\/docker\/volumes\/maymeowcloud_maymeowcloud_storage_buckets\/_data",
+          "Destination": "\/bucket",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "783b17396f2ee73bcc2c95d3937e1f0a8f5e2d2b56bfea2f34b4f71bd00f772e",
+      "Names": [
+        "\/maymeowcloud_platform_1"
+      ],
+      "Image": "maymeowcloud_platform",
+      "ImageID": "sha256:36857f694a4eac28fb491e14d6d0c4823c5286a5cffb040f81fa11dbbb5a482b",
+      "Command": "docker-php-entrypoint docker-entry",
+      "Created": 1488751794,
+      "Ports": [
+        {
+          "PrivatePort": 80,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "2d3562cecb97778b6bdb9bc7c8a77efbe01631ec7af0c3ab7eb3aafa7215510f",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "maymeowcloud",
+        "com.docker.compose.service": "platform",
+        "com.docker.compose.version": "1.10.0"
+      },
+      "State": "running",
+      "Status": "Up 5 days",
+      "HostConfig": {
+        "NetworkMode": "maymeowcloud_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "maymeowcloud_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "1bb1ca0bdd665aacfbcd5f9b598e7623019145b342839433b112c1e19fa2c688",
+            "EndpointID": "8c6f542bf6121e516cf252d4525fb92274f2a93e4b7407d381c467b2d93def3e",
+            "Gateway": "172.19.0.1",
+            "IPAddress": "172.19.0.5",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:ac:13:00:05"
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "maymeowcloud_maymeowcloud_users_data",
+          "Source": "\/var\/lib\/docker\/volumes\/maymeowcloud_maymeowcloud_users_data\/_data",
+          "Destination": "\/var\/www\/html\/webroot\/data\/users",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "maymeowcloud_maymeowcloud_config",
+          "Source": "\/var\/lib\/docker\/volumes\/maymeowcloud_maymeowcloud_config\/_data",
+          "Destination": "\/var\/www\/html\/config",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "maymeowcloud_maymeowcloud_storage_buckets",
+          "Source": "\/var\/lib\/docker\/volumes\/maymeowcloud_maymeowcloud_storage_buckets\/_data",
+          "Destination": "\/var\/www\/html\/webroot\/data\/storage\/buckets",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "\/cloud\/disks",
+          "Destination": "\/var\/www\/html\/webroot\/data\/storage\/disks",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "ad39cf3288bef30441d3f08b22fbbe0b2e3f7ca6e3029007f4eb14f2bacc9c51",
+      "Names": [
+        "\/maymeowcloud_redis_1"
+      ],
+      "Image": "maymeowcloud_redis",
+      "ImageID": "sha256:56ff2831859aa6b417e0a1a2fc7216299049b519acb043c46e39d71e17c196ab",
+      "Command": "\/usr\/bin\/redis-server",
+      "Created": 1488751784,
+      "Ports": [
+        {
+          "PrivatePort": 6379,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "adae47c6e2068d1b5bda68aa517367c241e995d7a778cd53ac4cbb4a1511d1b2",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "maymeowcloud",
+        "com.docker.compose.service": "redis",
+        "com.docker.compose.version": "1.10.0"
+      },
+      "State": "running",
+      "Status": "Up 5 days",
+      "HostConfig": {
+        "NetworkMode": "maymeowcloud_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "maymeowcloud_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "1bb1ca0bdd665aacfbcd5f9b598e7623019145b342839433b112c1e19fa2c688",
+            "EndpointID": "3de03606b5f780c8e57a6aa5e3e6a59bcb18f7647137ef1ec03b85b64476df6d",
+            "Gateway": "172.19.0.1",
+            "IPAddress": "172.19.0.4",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:ac:13:00:04"
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "746185af45e6e7704ee8cc2fad37ba349cd7b83adaa2337ef8f292887b95c636",
+      "Names": [
+        "\/maymeowcloud_db_1"
+      ],
+      "Image": "mariadb:10",
+      "ImageID": "sha256:7eca0e0b51c9351ea6a3639b3229432a7f7180dcc3a90ee47b9dd062fcfb520a",
+      "Command": "docker-entrypoint.sh mysqld",
+      "Created": 1488751784,
+      "Ports": [
+        {
+          "PrivatePort": 3306,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "3d2268bb1915edf676a242af7814279a45ff3be58dcd4bf8a6f000541920d977",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "maymeowcloud",
+        "com.docker.compose.service": "db",
+        "com.docker.compose.version": "1.10.0"
+      },
+      "State": "running",
+      "Status": "Up 5 days",
+      "HostConfig": {
+        "NetworkMode": "maymeowcloud_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "maymeowcloud_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "1bb1ca0bdd665aacfbcd5f9b598e7623019145b342839433b112c1e19fa2c688",
+            "EndpointID": "9628b4b19cafc6ea8c515b3b2d5c22e948cdf9308c5dc93c2dc3623d999c04c6",
+            "Gateway": "172.19.0.1",
+            "IPAddress": "172.19.0.3",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:ac:13:00:03"
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "maymeowcloud_db_data",
+          "Source": "\/var\/lib\/docker\/volumes\/maymeowcloud_db_data\/_data",
+          "Destination": "\/var\/lib\/mysql",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "36ebfd6d5495ec3949a79e76d870b8445ab72660b002f23321527a46d5949b2b",
+      "Names": [
+        "\/maymeowcloud_nginx_1"
+      ],
+      "Image": "maymeowcloud_nginx",
+      "ImageID": "sha256:374645d8161eb07543a1311914e5f63e167f22fa0e563d3dc62f79f696625340",
+      "Command": "\/bin\/sh -c \/docker-entry.sh",
+      "Created": 1488751784,
+      "Ports": [
+        {
+          "PrivatePort": 443,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 80,
+          "PublicPort": 8081,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "5144057dc2dee53377bc9e4bb9475378eff363ff5c7f8a0cd2e248817bb5a112",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "maymeowcloud",
+        "com.docker.compose.service": "nginx",
+        "com.docker.compose.version": "1.10.0"
+      },
+      "State": "running",
+      "Status": "Up 5 days",
+      "HostConfig": {
+        "NetworkMode": "maymeowcloud_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "maymeowcloud_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "1bb1ca0bdd665aacfbcd5f9b598e7623019145b342839433b112c1e19fa2c688",
+            "EndpointID": "73edd7c881f419541f3712d8054c7572ae6eeda242d15f3465560bc7ab908248",
+            "Gateway": "172.19.0.1",
+            "IPAddress": "172.19.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:ac:13:00:02"
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "c338fd35af773541a28af71c1399283c746e3df0271ade22fbac46554e4a9b20",
+      "Names": [
+        "\/gitlabdocker_gitlab_1"
+      ],
+      "Image": "gitlab\/gitlab-ce:latest",
+      "ImageID": "sha256:85c771d573afacf1eababa6bd258214ab9375920dc6c61765104a628f9a636bb",
+      "Command": "\/assets\/wrapper",
+      "Created": 1488352212,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 443,
+          "PublicPort": 8443,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 80,
+          "PublicPort": 8080,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 22,
+          "PublicPort": 2223,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "e6a7036629cbfa34b3b8f5315150b49b499821a26fbcb29e27a08eab159a6ab5",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "gitlabdocker",
+        "com.docker.compose.service": "gitlab",
+        "com.docker.compose.version": "1.10.0"
+      },
+      "State": "running",
+      "Status": "Up 9 days (unhealthy)",
+      "HostConfig": {
+        "NetworkMode": "gitlabdocker_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "gitlabdocker_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "7f8b57b620d57776f1a6e94e8dd3d3626fa9a3cd2d41a525803f565146c5d020",
+            "EndpointID": "f21cabaa932752ad78934cdd8411c18a07038bd80b8fdf34dbf080e956cc545c",
+            "Gateway": "172.18.0.1",
+            "IPAddress": "172.18.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:ac:12:00:02"
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "gitlabdocker_gitlab_etc",
+          "Source": "\/var\/lib\/docker\/volumes\/gitlabdocker_gitlab_etc\/_data",
+          "Destination": "\/etc\/gitlab",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "gitlabdocker_gitlab_log",
+          "Source": "\/var\/lib\/docker\/volumes\/gitlabdocker_gitlab_log\/_data",
+          "Destination": "\/var\/log\/gitlab",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "gitlabdocker_gitlab_opt",
+          "Source": "\/var\/lib\/docker\/volumes\/gitlabdocker_gitlab_opt\/_data",
+          "Destination": "\/var\/opt\/gitlab",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "1ad8a0b6b793664894f4670337049b6b3938d8e28ad79269b2aa12ed2878c143",
+      "Names": [
+        "\/cloudpages_nginx_1"
+      ],
+      "Image": "cloudpages_nginx",
+      "ImageID": "sha256:c879fb7e71e6bfbcc188b7d6e71e0780265011333ec0128d625042450a72dc88",
+      "Command": "\/bin\/sh -c \/docker-entry.sh",
+      "Created": 1488318491,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 80,
+          "PublicPort": 9979,
+          "Type": "tcp"
+        },
+        {
+          "PrivatePort": 443,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "f5c486fbe7a230b473141f899b5784b316a5130829f6e9d8aefce3b13371e7c6",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "cloudpages",
+        "com.docker.compose.service": "nginx",
+        "com.docker.compose.version": "1.10.0"
+      },
+      "State": "running",
+      "Status": "Up 9 days",
+      "HostConfig": {
+        "NetworkMode": "cloudpages_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "cloudpages_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "d163f35088cf363aa4f916e738269e6f80e15c157d72c84be43bcba87067089b",
+            "EndpointID": "bc1c590c789aa2dcf9261df6cde68bf01552e71325847706276d48c2dc1cfe6b",
+            "Gateway": "172.26.0.1",
+            "IPAddress": "172.26.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:ac:1a:00:02"
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "\/home\/martin\/pages",
+          "Destination": "\/var\/www\/pages",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "13c40c5a4499d504da83d6fa4615d85d26525082d96d8c662c66dde121b10e08",
+      "Names": [
+        "\/wordpresscloud_wordpress_1"
+      ],
+      "Image": "wordpress",
+      "ImageID": "sha256:2dc5069d75824f7791b5d3c8d67c3ab81162f76065783d632f54c9cbed4af7e5",
+      "Command": "docker-entrypoint.sh apache2-foreground",
+      "Created": 1488142941,
+      "Ports": [],
+      "Labels": {
+        "com.docker.compose.config-hash": "76b6d30428c49e6b0a3f3365b3a355637c289d034612e253ee9a2bf878f56964",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "wordpresscloud",
+        "com.docker.compose.service": "wordpress",
+        "com.docker.compose.version": "1.10.0"
+      },
+      "State": "exited",
+      "Status": "Exited (1) 24 hours ago",
+      "HostConfig": {
+        "NetworkMode": "wordpresscloud_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "wordpresscloud_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "3b0568e64a6829a281aa30073688f76c2d7dc3d452fe67a7e07618193583f625",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "3a7cf042913c887ad07be65d8152f8344d236ccf6b8519045842a997de40d047",
+          "Source": "\/var\/lib\/docker\/volumes\/3a7cf042913c887ad07be65d8152f8344d236ccf6b8519045842a997de40d047\/_data",
+          "Destination": "\/var\/www\/html",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "wordpresscloud_vp_data",
+          "Source": "\/var\/lib\/docker\/volumes\/wordpresscloud_vp_data\/_data",
+          "Destination": "\/var\/www\/html\/wp-content",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "d198ba27d7cd702fd430dc7526047e601fc81bd636b4342403626ecfa0ff130c",
+      "Names": [
+        "\/wordpresscloud_db_1"
+      ],
+      "Image": "mariadb",
+      "ImageID": "sha256:7eca0e0b51c9351ea6a3639b3229432a7f7180dcc3a90ee47b9dd062fcfb520a",
+      "Command": "docker-entrypoint.sh mysqld",
+      "Created": 1488142932,
+      "Ports": [
+        {
+          "PrivatePort": 3306,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "df27e98a79d8593a944e290f4e8d3eb110daa62ee68786550d8313ce12193c94",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "wordpresscloud",
+        "com.docker.compose.service": "db",
+        "com.docker.compose.version": "1.10.0"
+      },
+      "State": "exited",
+      "Status": "Exited (255) 9 days ago",
+      "HostConfig": {
+        "NetworkMode": "wordpresscloud_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "wordpresscloud_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "3b0568e64a6829a281aa30073688f76c2d7dc3d452fe67a7e07618193583f625",
+            "EndpointID": "b08860790bf76ff3028882de7301cbd25db37c8172eb1ea6d42158d0b9927120",
+            "Gateway": "172.27.0.1",
+            "IPAddress": "172.27.0.3",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:ac:1b:00:03"
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "03b9b0827a561b2fc4ade3b6039467730c924f2e1ba4f432a8b3142ea8e3b358",
+          "Source": "\/var\/lib\/docker\/volumes\/03b9b0827a561b2fc4ade3b6039467730c924f2e1ba4f432a8b3142ea8e3b358\/_data",
+          "Destination": "\/var\/lib\/mysql",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "5674555ca1aca05db2990c4562db290c5a4eebd06616f80a50168d7487b9cb5e",
+      "Names": [
+        "\/wordpresscloud_nginx_1"
+      ],
+      "Image": "wordpresscloud_nginx",
+      "ImageID": "sha256:c194db6e01de474767fc1f8d51400c7e1a43603a81e43f5efb2c7cc97d75e741",
+      "Command": "\/bin\/sh -c \/docker-entry.sh",
+      "Created": 1488142932,
+      "Ports": [],
+      "Labels": {
+        "com.docker.compose.config-hash": "50c8402ece36963bfa255a2b5645bc84f5f8f262bce210a14316d557c2d21450",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "wordpresscloud",
+        "com.docker.compose.service": "nginx",
+        "com.docker.compose.version": "1.10.0"
+      },
+      "State": "exited",
+      "Status": "Exited (1) 9 days ago",
+      "HostConfig": {
+        "NetworkMode": "wordpresscloud_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "wordpresscloud_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "3b0568e64a6829a281aa30073688f76c2d7dc3d452fe67a7e07618193583f625",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "wordpresscloud_db_data",
+          "Source": "\/var\/lib\/docker\/volumes\/wordpresscloud_db_data\/_data",
+          "Destination": "\/var\/lib\/mysql",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "557dcb34bba8ac3cf1e9d4cbe29b253ab753ee7869e8be1cea63e0573e283b0a",
+      "Names": [
+        "\/dockerzabbix_zabbix-server_1"
+      ],
+      "Image": "monitoringartist\/zabbix-xxl:latest",
+      "ImageID": "sha256:cadb2c0118ef4b1715bdacf48c31d84e75e9f7b1c6efdb18b4a76dbfddaf0a76",
+      "Command": "\/config\/bootstrap.sh",
+      "Created": 1488057551,
+      "Ports": [],
+      "Labels": {
+        "build-date": "20161214",
+        "com.docker.compose.config-hash": "a4f291668a7b8a74f713cf2724ee294f72a453e5ef6445738a32233027d6c2bb",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "dockerzabbix",
+        "com.docker.compose.service": "zabbix-server",
+        "com.docker.compose.version": "1.10.0",
+        "license": "GPLv2",
+        "name": "CentOS Base Image",
+        "vendor": "CentOS"
+      },
+      "State": "exited",
+      "Status": "Exited (137) 11 days ago",
+      "HostConfig": {
+        "NetworkMode": "dockerzabbix_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "dockerzabbix_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "6ef8b4af527739908d058c62a3574d0d945bf06f93d36fa01c8156fefda7db74",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "69e4a0140c5d0d4b097be4f0ac86d73281a237f7a728452d6c767026823ad236",
+          "Source": "\/var\/lib\/docker\/volumes\/69e4a0140c5d0d4b097be4f0ac86d73281a237f7a728452d6c767026823ad236\/_data",
+          "Destination": "\/usr\/local\/share\/zabbix\/externalscripts",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "d83cdcb71be713687e1a93a457144c5b046e7ad165168f031b3b3e46f0c4be4d",
+          "Source": "\/var\/lib\/docker\/volumes\/d83cdcb71be713687e1a93a457144c5b046e7ad165168f031b3b3e46f0c4be4d\/_data",
+          "Destination": "\/usr\/local\/share\/zabbix\/ssl\/certs",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "6e333c51c9338d17b9eab7f107449f584e3dab2fab1db172be55fc4562f9f00c",
+          "Source": "\/var\/lib\/docker\/volumes\/6e333c51c9338d17b9eab7f107449f584e3dab2fab1db172be55fc4562f9f00c\/_data",
+          "Destination": "\/usr\/share\/snmp\/mibs",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "bc9664caf3ab0d29927541185fb1d91f2c261aae36866d7ede919a5b22cc571f",
+          "Source": "\/var\/lib\/docker\/volumes\/bc9664caf3ab0d29927541185fb1d91f2c261aae36866d7ede919a5b22cc571f\/_data",
+          "Destination": "\/etc\/snmp",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "40294e25dc1cbf3a8882bec0d96bd2652358cb900f70c273209836726d938559",
+          "Source": "\/var\/lib\/docker\/volumes\/40294e25dc1cbf3a8882bec0d96bd2652358cb900f70c273209836726d938559\/_data",
+          "Destination": "\/usr\/lib\/zabbix\/modules",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "17194aae81229361ff8d6469f1427633833c87274019326fe9792b309806e050",
+          "Source": "\/var\/lib\/docker\/volumes\/17194aae81229361ff8d6469f1427633833c87274019326fe9792b309806e050\/_data",
+          "Destination": "\/usr\/local\/share\/zabbix\/alertscripts",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "f1f9db5050a64a3c05dd4395c17a3c1f3bd70806c59ce77f070e84ef257a531d",
+          "Source": "\/var\/lib\/docker\/volumes\/f1f9db5050a64a3c05dd4395c17a3c1f3bd70806c59ce77f070e84ef257a531d\/_data",
+          "Destination": "\/usr\/local\/share\/zabbix\/ssl\/keys",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "6cf49037b0c9982b8d6c229db0339928ed722f8582cf4235f90c7f9f49f1b109",
+          "Source": "\/var\/lib\/docker\/volumes\/6cf49037b0c9982b8d6c229db0339928ed722f8582cf4235f90c7f9f49f1b109\/_data",
+          "Destination": "\/etc\/custom-config",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "\/etc\/localtime",
+          "Destination": "\/etc\/localtime",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "b524e5daeff975400add69171f14a474ea3556c5d17f84466523d3875d3afb3b",
+      "Names": [
+        "\/dockerzabbix_zabbix-db_1"
+      ],
+      "Image": "monitoringartist\/zabbix-db-mariadb",
+      "ImageID": "sha256:761d337715818fdab7f8ce5aff266664504076c5e464fcaa8fabb48dd74b9e8c",
+      "Command": "\/run.sh",
+      "Created": 1488057544,
+      "Ports": [],
+      "Labels": {
+        "build-date": "20161214",
+        "com.docker.compose.config-hash": "3b0cd62171c395b212db766f21596f1fac5e3f5a6c26c161a22df7c703631bd0",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "dockerzabbix",
+        "com.docker.compose.service": "zabbix-db",
+        "com.docker.compose.version": "1.10.0",
+        "license": "GPLv2",
+        "name": "CentOS Base Image",
+        "vendor": "CentOS"
+      },
+      "State": "exited",
+      "Status": "Exited (143) 11 days ago",
+      "HostConfig": {
+        "NetworkMode": "dockerzabbix_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "dockerzabbix_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "6ef8b4af527739908d058c62a3574d0d945bf06f93d36fa01c8156fefda7db74",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "dockerzabbix_backups",
+          "Source": "\/var\/lib\/docker\/volumes\/dockerzabbix_backups\/_data",
+          "Destination": "\/backups",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "\/etc\/localtime",
+          "Destination": "\/etc\/localtime",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "dockerzabbix_zabbix-db-storage",
+          "Source": "\/var\/lib\/docker\/volumes\/dockerzabbix_zabbix-db-storage\/_data",
+          "Destination": "\/var\/lib\/mysql",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "0cce3881f54668198d3914cc5b2c0c16d3e7eed85eb2af6454ce5157295dfd77",
+      "Names": [
+        "\/dockerzabbix_grafana_1"
+      ],
+      "Image": "monitoringartist\/grafana-xxl:latest",
+      "ImageID": "sha256:593252064798ca57644e2c7f12d6f64bca4a2cc953eb7eeee76fb8146813137a",
+      "Command": "\/run.sh",
+      "Created": 1488057544,
+      "Ports": [],
+      "Labels": {
+        "com.docker.compose.config-hash": "55f439c1eb0f1411b498ea99e7f30eae2a2004a693ad06b97c0d6203b6e8ec45",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "dockerzabbix",
+        "com.docker.compose.service": "grafana",
+        "com.docker.compose.version": "1.10.0"
+      },
+      "State": "exited",
+      "Status": "Exited (0) 11 days ago",
+      "HostConfig": {
+        "NetworkMode": "dockerzabbix_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "dockerzabbix_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "6ef8b4af527739908d058c62a3574d0d945bf06f93d36fa01c8156fefda7db74",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "volume",
+          "Name": "de02abfb93db18704d19c38ad1f45f07c7294358a8879365ddc2b1e4d6685a5c",
+          "Source": "\/var\/lib\/docker\/volumes\/de02abfb93db18704d19c38ad1f45f07c7294358a8879365ddc2b1e4d6685a5c\/_data",
+          "Destination": "\/etc\/grafana",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "dockerzabbix_grafana-xll-lib",
+          "Source": "\/var\/lib\/docker\/volumes\/dockerzabbix_grafana-xll-lib\/_data",
+          "Destination": "\/var\/lib\/grafana",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "413a10ac4fc17729597c387e849b3619adfa8f840e40bb05caf7de57adda6f5e",
+          "Source": "\/var\/lib\/docker\/volumes\/413a10ac4fc17729597c387e849b3619adfa8f840e40bb05caf7de57adda6f5e\/_data",
+          "Destination": "\/var\/log\/grafana",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "31e0552f0d735d6ce9140b7ce9b615012f0db0ac3c70e93d4aa96768ed31cc4d",
+      "Names": [
+        "\/determined_bardeen"
+      ],
+      "Image": "sha256:f6199a86b0c0cf6fa6a073ceae20324b3a0c7cbc87c8fc46a16d39819256dc26",
+      "ImageID": "sha256:f6199a86b0c0cf6fa6a073ceae20324b3a0c7cbc87c8fc46a16d39819256dc26",
+      "Command": "\/bin\/sh -c '.\/fullinstall -n'",
+      "Created": 1488051063,
+      "Ports": [],
+      "Labels": {
+        "build-date": "20161102",
+        "license": "GPLv2",
+        "name": "CentOS Base Image",
+        "vendor": "CentOS"
+      },
+      "State": "exited",
+      "Status": "Exited (1) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "4bfe3e1b89b464477b75104c20c322dd868c8548452dcdc31c7d522249975e98",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "c70864ad15490f45793076481d3df83a0c585542a3010c2edfd7eba0331ebc56",
+      "Names": [
+        "\/boring_nobel"
+      ],
+      "Image": "sha256:f6199a86b0c0cf6fa6a073ceae20324b3a0c7cbc87c8fc46a16d39819256dc26",
+      "ImageID": "sha256:f6199a86b0c0cf6fa6a073ceae20324b3a0c7cbc87c8fc46a16d39819256dc26",
+      "Command": "\/bin\/sh -c '.\/fullinstall --help'",
+      "Created": 1488051000,
+      "Ports": [],
+      "Labels": {
+        "build-date": "20161102",
+        "license": "GPLv2",
+        "name": "CentOS Base Image",
+        "vendor": "CentOS"
+      },
+      "State": "exited",
+      "Status": "Exited (1) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "4bfe3e1b89b464477b75104c20c322dd868c8548452dcdc31c7d522249975e98",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "cf250cab506ffa73dd3d7e3fc1e633429dbbc7c07da1a5639a20237a3b93883c",
+      "Names": [
+        "\/romantic_newton"
+      ],
+      "Image": "sha256:f6199a86b0c0cf6fa6a073ceae20324b3a0c7cbc87c8fc46a16d39819256dc26",
+      "ImageID": "sha256:f6199a86b0c0cf6fa6a073ceae20324b3a0c7cbc87c8fc46a16d39819256dc26",
+      "Command": "\/bin\/sh -c '.\/fullinstall -y'",
+      "Created": 1488050959,
+      "Ports": [],
+      "Labels": {
+        "build-date": "20161102",
+        "license": "GPLv2",
+        "name": "CentOS Base Image",
+        "vendor": "CentOS"
+      },
+      "State": "exited",
+      "Status": "Exited (1) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "4bfe3e1b89b464477b75104c20c322dd868c8548452dcdc31c7d522249975e98",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "4bffcdac0d2e422c77904a21d028c059813a8a652fc02b15b57c2268302bc122",
+      "Names": [
+        "\/gracious_nobel"
+      ],
+      "Image": "sha256:f6199a86b0c0cf6fa6a073ceae20324b3a0c7cbc87c8fc46a16d39819256dc26",
+      "ImageID": "sha256:f6199a86b0c0cf6fa6a073ceae20324b3a0c7cbc87c8fc46a16d39819256dc26",
+      "Command": "\/bin\/sh -c .\/fullinstall",
+      "Created": 1488050827,
+      "Ports": [],
+      "Labels": {
+        "build-date": "20161102",
+        "license": "GPLv2",
+        "name": "CentOS Base Image",
+        "vendor": "CentOS"
+      },
+      "State": "exited",
+      "Status": "Exited (1) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "4bfe3e1b89b464477b75104c20c322dd868c8548452dcdc31c7d522249975e98",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "2d83a54ad3159a3f2ca1238c5a615e3aad97fc4546b06c780acc1695e3c5e911",
+      "Names": [
+        "\/confident_elion"
+      ],
+      "Image": "sha256:a920b97ad3bab525ada7c494e2117b7e4e21ec5cdfaf6d8628a14d4c32d131bc",
+      "ImageID": "sha256:a920b97ad3bab525ada7c494e2117b7e4e21ec5cdfaf6d8628a14d4c32d131bc",
+      "Command": "\/bin\/sh -c 'requirements=\"libmcrypt-dev g++ libicu-dev libmcrypt4 libicu52\"     && apt-get update && apt-get install -y $requirements     && docker-php-ext-install snmp     && docker-php-ext-install gd     && requirementsToRemove=\"libmcrypt-dev g++ libicu-dev\"     && apt-get purge --auto-remove -y $requirementsToRemove     && rm -rf \/var\/lib\/apt\/lists\/*'",
+      "Created": 1488028174,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (1) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "91243bd0b9634a200dd7fe782d58e1d8a85152e8b5dc8fb6891c878563fc7a9d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "8f97699d310ce23b7939daa1f2895f2bd8e306a1e165895eef434191535f1126",
+      "Names": [
+        "\/pedantic_lichterman"
+      ],
+      "Image": "sha256:a67cab792df8fdcd308f898c2428d87e4b7bdfccf7e018567910d36838b6b9d7",
+      "ImageID": "sha256:a67cab792df8fdcd308f898c2428d87e4b7bdfccf7e018567910d36838b6b9d7",
+      "Command": "\/bin\/sh -c 'requirements=\"libmcrypt-dev g++ libicu-dev libmcrypt4 libicu52\"     && apt-get update && apt-get install -y $requirements     && docker-php-ext-install snmp     && docker-php-ext-install ldap     && docker-php-ext-install gd     && requirementsToRemove=\"libmcrypt-dev g++ libicu-dev\"     && apt-get purge --auto-remove -y $requirementsToRemove     && rm -rf \/var\/lib\/apt\/lists\/*'",
+      "Created": 1488027975,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (1) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "91243bd0b9634a200dd7fe782d58e1d8a85152e8b5dc8fb6891c878563fc7a9d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "128f53a0d8b1b316d33c28474cbe3674c27167d04051ec243dde37071b5a094d",
+      "Names": [
+        "\/wizardly_sammet"
+      ],
+      "Image": "sha256:a920b97ad3bab525ada7c494e2117b7e4e21ec5cdfaf6d8628a14d4c32d131bc",
+      "ImageID": "sha256:a920b97ad3bab525ada7c494e2117b7e4e21ec5cdfaf6d8628a14d4c32d131bc",
+      "Command": "\/bin\/sh -c 'requirements=\"libmcrypt-dev g++ libicu-dev libmcrypt4 libicu52\"     && apt-get update && apt-get install -y $requirements     && docker-php-ext-install snmp     && docker-php-ext-install ldap     && docker-php-ext-install gd     && requirementsToRemove=\"libmcrypt-dev g++ libicu-dev\"     && apt-get purge --auto-remove -y $requirementsToRemove     && rm -rf \/var\/lib\/apt\/lists\/*'",
+      "Created": 1488027788,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (1) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "91243bd0b9634a200dd7fe782d58e1d8a85152e8b5dc8fb6891c878563fc7a9d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "ff27f1bd83075541d3930d1e2241ac03ccdb65261bf4127c057338f05850c722",
+      "Names": [
+        "\/sharp_rosalind"
+      ],
+      "Image": "sha256:c1f49ebd80b56c2d9f8ce5db4af4548dfe3591f5ae0931412e31f7e2a8ca33eb",
+      "ImageID": "sha256:c1f49ebd80b56c2d9f8ce5db4af4548dfe3591f5ae0931412e31f7e2a8ca33eb",
+      "Command": "\/bin\/sh -c 'requirements=\"libmcrypt-dev g++ libicu-dev libmcrypt4 libicu52\"     && apt-get update && apt-get install -y $requirements     && docker-php-ext-install snmp     && docker-php-ext-install ldap     && docker-php-ext-install gd     && requirementsToRemove=\"libmcrypt-dev g++ libicu-dev\"     && apt-get purge --auto-remove -y $requirementsToRemove     && rm -rf \/var\/lib\/apt\/lists\/*'",
+      "Created": 1488027466,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (1) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "91243bd0b9634a200dd7fe782d58e1d8a85152e8b5dc8fb6891c878563fc7a9d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "b57a3687a24f8b56e00561cb8c78a430059a5528e54386509c53fcc0bba0ab02",
+      "Names": [
+        "\/inspiring_turing"
+      ],
+      "Image": "sha256:1c090aae8ad080aa3bece5fa89bfc03587a6c44b9e583241cac0ef86765e6e39",
+      "ImageID": "sha256:1c090aae8ad080aa3bece5fa89bfc03587a6c44b9e583241cac0ef86765e6e39",
+      "Command": "\/bin\/sh -c 'requirements=\"libmcrypt-dev g++ libicu-dev libmcrypt4 libicu52\"     && apt-get update && apt-get install -y $requirements     && docker-php-ext-install snmp     && docker-php-ext-install ldap     && docker-php-ext-install gd     && requirementsToRemove=\"libmcrypt-dev g++ libicu-dev\"     && apt-get purge --auto-remove -y $requirementsToRemove     && rm -rf \/var\/lib\/apt\/lists\/*'",
+      "Created": 1488027155,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (1) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "91243bd0b9634a200dd7fe782d58e1d8a85152e8b5dc8fb6891c878563fc7a9d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "3bce5a429b602f3b612b7200ed475666172f8c393ff39721d10a03cf94e96b64",
+      "Names": [
+        "\/trusting_morse"
+      ],
+      "Image": "sha256:24c58f9b29d74572a97db497e7a3511d04e113b1d21165834cad00bdc1d96fbd",
+      "ImageID": "sha256:24c58f9b29d74572a97db497e7a3511d04e113b1d21165834cad00bdc1d96fbd",
+      "Command": "\/bin\/sh -c 'apt-get update     && apt-get install -y libsnmp-base libsnmp snmp snmpd'",
+      "Created": 1488026944,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (100) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "91243bd0b9634a200dd7fe782d58e1d8a85152e8b5dc8fb6891c878563fc7a9d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "ad2486a8bbc3bb078bc3ab0902cc427942a3a67640d1a728c03b85bf27bcf032",
+      "Names": [
+        "\/gracious_boyd"
+      ],
+      "Image": "sha256:24c58f9b29d74572a97db497e7a3511d04e113b1d21165834cad00bdc1d96fbd",
+      "ImageID": "sha256:24c58f9b29d74572a97db497e7a3511d04e113b1d21165834cad00bdc1d96fbd",
+      "Command": "\/bin\/sh -c 'apt-get update     && apt-get install -y libsnmp-base libsnmp5 snmp snmpd'",
+      "Created": 1488026837,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (100) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "91243bd0b9634a200dd7fe782d58e1d8a85152e8b5dc8fb6891c878563fc7a9d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "f3058ba8c8977d0834ae3e3fba41a026b027070332f985765707084b08b0eb7c",
+      "Names": [
+        "\/modest_bohr"
+      ],
+      "Image": "sha256:24c58f9b29d74572a97db497e7a3511d04e113b1d21165834cad00bdc1d96fbd",
+      "ImageID": "sha256:24c58f9b29d74572a97db497e7a3511d04e113b1d21165834cad00bdc1d96fbd",
+      "Command": "\/bin\/sh -c 'apt-get update     && apt-get install -y rrdtool net-snmp net-snmp-devel net-snmp-utils'",
+      "Created": 1488026674,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (100) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "91243bd0b9634a200dd7fe782d58e1d8a85152e8b5dc8fb6891c878563fc7a9d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "07a843bda50f2b13b51e620f77f06d22a2d8d40c0acc6b1927ab0599e6373d73",
+      "Names": [
+        "\/clever_northcutt"
+      ],
+      "Image": "sha256:24c58f9b29d74572a97db497e7a3511d04e113b1d21165834cad00bdc1d96fbd",
+      "ImageID": "sha256:24c58f9b29d74572a97db497e7a3511d04e113b1d21165834cad00bdc1d96fbd",
+      "Command": "\/bin\/sh -c 'apt-get install -y rrdtool net-snmp net-snmp-devel net-snmp-utils'",
+      "Created": 1488026352,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (100) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "91243bd0b9634a200dd7fe782d58e1d8a85152e8b5dc8fb6891c878563fc7a9d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "be849bf88a3b2c56d17241a2bb5bfb42198b622da2d49234b9cdeb6b926c476c",
+      "Names": [
+        "\/clever_elion"
+      ],
+      "Image": "sha256:24c58f9b29d74572a97db497e7a3511d04e113b1d21165834cad00bdc1d96fbd",
+      "ImageID": "sha256:24c58f9b29d74572a97db497e7a3511d04e113b1d21165834cad00bdc1d96fbd",
+      "Command": "\/bin\/sh -c 'apt-get install -y libsnmp-base libsnmp5 snmp snmpd     && rocommunity public'",
+      "Created": 1488025973,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (100) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "91243bd0b9634a200dd7fe782d58e1d8a85152e8b5dc8fb6891c878563fc7a9d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "2d6f73af28b8eb27a0f27a5809923a22af49283492f5e36e7edb1aafccc12872",
+      "Names": [
+        "\/epic_snyder"
+      ],
+      "Image": "sha256:24c58f9b29d74572a97db497e7a3511d04e113b1d21165834cad00bdc1d96fbd",
+      "ImageID": "sha256:24c58f9b29d74572a97db497e7a3511d04e113b1d21165834cad00bdc1d96fbd",
+      "Command": "\/bin\/sh -c 'requirements=\"libmcrypt-dev g++ libicu-dev libmcrypt4 libicu52\"     && apt-get update && apt-get install -y $requirements     && docker-php-ext-install snmp     && docker-php-ext-install ldap     && docker-php-ext-install gd     && requirementsToRemove=\"libmcrypt-dev g++ libicu-dev\"     && apt-get purge --auto-remove -y $requirementsToRemove     && rm -rf \/var\/lib\/apt\/lists\/*'",
+      "Created": 1488025553,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (1) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "91243bd0b9634a200dd7fe782d58e1d8a85152e8b5dc8fb6891c878563fc7a9d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "f59923019b00cc2bda6e854378e39e08d4bbf70148580c2505773758a3a0906a",
+      "Names": [
+        "\/eager_bell"
+      ],
+      "Image": "sha256:24c58f9b29d74572a97db497e7a3511d04e113b1d21165834cad00bdc1d96fbd",
+      "ImageID": "sha256:24c58f9b29d74572a97db497e7a3511d04e113b1d21165834cad00bdc1d96fbd",
+      "Command": "\/bin\/sh -c 'apt-get install -y php7.0-snmp php7.0-ldap php7.0-gd'",
+      "Created": 1488025288,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (100) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "91243bd0b9634a200dd7fe782d58e1d8a85152e8b5dc8fb6891c878563fc7a9d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "7d439781aeeb5a1e02c4cd19b5e5701890d62ed4295b9d27be24ae329d1c3933",
+      "Names": [
+        "\/hungry_wescoff"
+      ],
+      "Image": "sha256:8a0f3b092886ec45a71e1a6ef328c09761610719ee6c76240fc3ebc039e115b6",
+      "ImageID": "sha256:8a0f3b092886ec45a71e1a6ef328c09761610719ee6c76240fc3ebc039e115b6",
+      "Command": "\/bin\/sh -c 'chown -R rra \/var\/www\/html\/log\/'",
+      "Created": 1488023065,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (1) 13 days ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "91243bd0b9634a200dd7fe782d58e1d8a85152e8b5dc8fb6891c878563fc7a9d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "e6c14a4615dfd80803599879f8ec0e314b69c84b4a00a77655f16a6888720548",
+      "Names": [
+        "\/eager_mirzakhani"
+      ],
+      "Image": "sha256:e20cc7a5c98ce41ab87547b193b3b68da85e923db5b7f9caefc56c3b2fe75c49",
+      "ImageID": "sha256:e20cc7a5c98ce41ab87547b193b3b68da85e923db5b7f9caefc56c3b2fe75c49",
+      "Command": "\/bin\/sh -c 'requirements=\"libmcrypt-dev g++ libicu-dev libmcrypt4 libicu52\"     && apt-get update && apt-get install -y $requirements     && docker-php-ext-install pdo_mysql     && docker-php-ext-install mcrypt     && docker-php-ext-install mbstring     && docker-php-ext-install intl     && docker-php-ext-install dev     && pecl install xdebug     && docker-php-ext-enable xdebug     && requirementsToRemove=\"libmcrypt-dev g++ libicu-dev\"     && apt-get purge --auto-remove -y $requirementsToRemove     && rm -rf \/var\/lib\/apt\/lists\/*'",
+      "Created": 1487677005,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (1) 2 weeks ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "19fbe5525a30ae472bc563152c8eee91d68eff2dabffd476c693c6b2b328c08d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "69ef00795cbd48018406293c1c96bc669431524f417f2359e4998bd24454fa25",
+      "Names": [
+        "\/reverent_shaw"
+      ],
+      "Image": "sha256:c638cf634121b609c24ca4f704c3dc98fd67af3950993075c9b5a606d0bf19bb",
+      "ImageID": "sha256:c638cf634121b609c24ca4f704c3dc98fd67af3950993075c9b5a606d0bf19bb",
+      "Command": "\/bin\/sh -c 'echo \"extension=redis.so\" > \/etc\/php\/7.0\/mods-available\/redis.ini     && ln -sf \/etc\/php\/7.0\/mods-available\/redis.ini \/etc\/php\/7.0\/fpm\/conf.d\/20-redis.ini     && ln -sf \/etc\/php\/7.0\/mods-available\/redis.ini \/etc\/php\/7.0\/cli\/conf.d\/20-redis.ini'",
+      "Created": 1487676731,
+      "Ports": [],
+      "Labels": {},
+      "State": "exited",
+      "Status": "Exited (2) 2 weeks ago",
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "19fbe5525a30ae472bc563152c8eee91d68eff2dabffd476c693c6b2b328c08d",
+            "EndpointID": "",
+            "Gateway": "",
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": ""
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "d6878ad77457537b779cf59e9d1be3684c78ceb1058974253e065085b7d5f674",
+      "Names": [
+        "\/sshdocker_ssh_1"
+      ],
+      "Image": "sshdocker_ssh",
+      "ImageID": "sha256:ccee7af105f90c1b9059ae731fcfda59d23ea8c40a261eb99f6e752a16302b24",
+      "Command": "\/docker-entry",
+      "Created": 1487583676,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 22,
+          "PublicPort": 32774,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "f3c3dce33fe64e5dfa7878e8b52abcc650c6e6ffc7ea6482c95ba395f44df7b1",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "sshdocker",
+        "com.docker.compose.service": "ssh",
+        "com.docker.compose.version": "1.10.0"
+      },
+      "State": "exited",
+      "Status": "Exited (255) 2 weeks ago",
+      "HostConfig": {
+        "NetworkMode": "sshdocker_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "sshdocker_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "cb131ab6472e80a4d870e36d336c3d55cb1b1ef52f330e65c12f90b7cccb9011",
+            "EndpointID": "e77302db9ece32cd0b4a19b0fb5176ccc6e2d995f4539b8d2e072ba332369a5d",
+            "Gateway": "172.23.0.1",
+            "IPAddress": "172.23.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:ac:17:00:02"
+          }
+        }
+      },
+      "Mounts": []
+    },
+    {
+      "Id": "61f1ac15a208263bbc4bf42ccbd0c0537d566ddaaa85d3260158fa46fe41dd12",
+      "Names": [
+        "\/mattermostmay_db_1"
+      ],
+      "Image": "mattermostmay_db",
+      "ImageID": "sha256:070dd46171966922ee2f8c1792853fa7c89deec77ca5e489aa4856467bd3b965",
+      "Command": "\/docker-entrypoint1.sh postgres",
+      "Created": 1487419218,
+      "Ports": [
+        {
+          "PrivatePort": 5432,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "bb3601000f2aa5d0f236651145c78402b67a64ea2e3df787b640450bea5fca9b",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "mattermostmay",
+        "com.docker.compose.service": "db",
+        "com.docker.compose.version": "1.10.0"
+      },
+      "State": "running",
+      "Status": "Up 9 days",
+      "HostConfig": {
+        "NetworkMode": "mattermostmay_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "mattermostmay_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "1deaa1db75b456667f70e0db3a9be45b404f005f3dc479ac7aee7f7da0f5d2c7",
+            "EndpointID": "1601b052cc70c982be4f6c8b344a520d20a6548b4d72053150b22df7360d2413",
+            "Gateway": "172.22.0.1",
+            "IPAddress": "172.22.0.3",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:ac:16:00:03"
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "\/etc\/localtime",
+          "Destination": "\/etc\/localtime",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "\/home\/martin\/mattermost-may\/volumes\/db\/var\/lib\/postgresql\/data",
+          "Destination": "\/var\/lib\/postgresql\/data",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    },
+    {
+      "Id": "d6dbb7708abaf516534b64e566fcf47297e34cd13a06993d8b3a1a9171bc5c3c",
+      "Names": [
+        "\/mattermostmay_app_1"
+      ],
+      "Image": "mattermostmay_app",
+      "ImageID": "sha256:616a34838d10e0d631897362c02d490b6f68275c9ff6a94b2bb08ac72ba534fb",
+      "Command": "\/docker-entry.sh",
+      "Created": 1487419218,
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 80,
+          "PublicPort": 8083,
+          "Type": "tcp"
+        }
+      ],
+      "Labels": {
+        "com.docker.compose.config-hash": "cf7c4abc46e5e970ee135a9e4942239d1f272a32960adc7767bc06468c5c36ee",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "mattermostmay",
+        "com.docker.compose.service": "app",
+        "com.docker.compose.version": "1.10.0"
+      },
+      "State": "running",
+      "Status": "Up 9 days",
+      "HostConfig": {
+        "NetworkMode": "mattermostmay_default"
+      },
+      "NetworkSettings": {
+        "Networks": {
+          "mattermostmay_default": {
+            "IPAMConfig": null,
+            "Links": null,
+            "Aliases": null,
+            "NetworkID": "1deaa1db75b456667f70e0db3a9be45b404f005f3dc479ac7aee7f7da0f5d2c7",
+            "EndpointID": "dbfeca2ccfeda72dc04da215edc047d1a47a46c1f668ffaeca1ee0ead5d6a5d1",
+            "Gateway": "172.22.0.1",
+            "IPAddress": "172.22.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "MacAddress": "02:42:ac:16:00:02"
+          }
+        }
+      },
+      "Mounts": [
+        {
+          "Type": "bind",
+          "Source": "\/etc\/localtime",
+          "Destination": "\/etc\/localtime",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "\/home\/martin\/mattermost-may\/volumes\/app\/mattermost\/config",
+          "Destination": "\/mattermost\/config",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "\/home\/martin\/mattermost-may\/volumes\/app\/mattermost\/data",
+          "Destination": "\/mattermost\/data",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ]
+    }
+  ]
+}

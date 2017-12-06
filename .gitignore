@@ -1,0 +1,9 @@
+/vendor/*
+/config/app.php
+/tmp/*
+/logs/*
+/plugins/*
+/.idea/*
+/config/agent.json
+/docs/node_modules/*
+/docs/_book
