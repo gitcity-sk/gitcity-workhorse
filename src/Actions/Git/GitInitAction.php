@@ -33,13 +33,22 @@ class GitInitAction extends AbstractAction implements ActionInterface
 
         Log::show($command);
 
-        $fs = new Filesystem();
+        //print_r($data);
 
+        $fs = new Filesystem();
         if (!$fs->exists($data->path)) $fs->mkdir($data->path);
 
         $repo = new Repository($data->path, new GitBinary('git'));
         $repo->init(true);
 
+        $this->createHooks($data->hooks, $data->path);
+
         return true;
+    }
+
+    public function createHooks($hooksPath, $repoPath)
+    {
+        Log::show("rm -r $repoPath/hooks");
+        Log::show("ln -s $hooksPath $repoPath/hooks");
     }
 }
