@@ -8,6 +8,7 @@ use MayMeow\Cloud\Sockets\Actions\AbstractAction;
 use MayMeow\Cloud\Sockets\Actions\ActionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use MayMeow\Cloud\Sockets\Log;
+use Symfony\Component\Process\Process;
 
 
 class GitInitAction extends AbstractAction implements ActionInterface
@@ -48,7 +49,16 @@ class GitInitAction extends AbstractAction implements ActionInterface
 
     public function createHooks($hooksPath, $repoPath)
     {
-        Log::show("rm -r $repoPath/hooks");
-        Log::show("ln -s $hooksPath $repoPath/hooks");
+        //Log::show("rm -r $repoPath/hooks");
+        $command = "ln -fs $hooksPath $repoPath/hooks"
+        Log::show($command);
+        
+        $process = new Process($command);
+        $process->start();
+        while ($process->isRunning()) {
+            // waiting for process to finish
+        }
+
+        Log::show($process->getOutput());
     }
 }

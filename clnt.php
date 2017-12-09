@@ -25,7 +25,7 @@
 
 require_once 'vendor/autoload.php';
 
-$client = new \MayMeow\Cloud\Sockets\SocketClient('tcp://cakeapp-ce.gitcity.sk:88001');
+$client = new \MayMeow\Cloud\Sockets\SocketClient('tcp://localhost:8801');
 
 /*$response = $client->run([
     'action' => 'Ping',
@@ -45,7 +45,7 @@ print_r($response);*/
 
 $response = $client->setAction('git:init:bare')
     ->setData([
-        'path' => '/var/opt/cakeapp/data/git-data/789545/martin/my-repo-5.git'
+        'path' => '/var/opt/gitcity/git-data/my-repo-5.git'
     ])
     ->run();
 

@@ -30,7 +30,7 @@ class WriteKeysAction extends AbstractAction implements ActionInterface
         $keysString = '';
 
         foreach ($options->keys as $key => $value) {
-            $keysString .= 'command="/opt/gitcity/gitcity-shell/ssh-exec key-' . $value->id . '",no-port-forwarding,no-x11-forwarding,no-agent-forwarding,no-pty ' . $value->public_key . "\n";
+            $keysString .= 'command="/var/www/html/embeded/git-shell/ssh-exec key-' . $value->id . '",no-port-forwarding,no-x11-forwarding,no-agent-forwarding,no-pty ' . $value->public_key . "\n";
         }
 
         $fs = new Filesystem();
