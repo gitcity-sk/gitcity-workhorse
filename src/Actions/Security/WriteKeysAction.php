@@ -12,6 +12,7 @@ use MayMeow\Cloud\Sockets\Actions\AbstractAction;
 use MayMeow\Cloud\Sockets\Actions\ActionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use MayMeow\Cloud\Sockets\Log;
+use Symfony\Component\Process\Process;
 
 class WriteKeysAction extends AbstractAction implements ActionInterface
 {
@@ -38,5 +39,13 @@ class WriteKeysAction extends AbstractAction implements ActionInterface
 
         Log::show('Writing authorized_keys for git user');
         file_put_contents($options->path . 'authorized_keys', $keysString);
+
+        // HADRCODED TOTO to change it
+        Log::show("chown -R 1000 /var/opt/gitcity/git-data/");
+        $process = new Process("chown -R 1000 /var/opt/gitcity/git-data/");
+        $process->start();
+        while ($process->isRunning()) {
+            // waiting for process to finish
+        }
     }
 }

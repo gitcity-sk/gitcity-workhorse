@@ -44,6 +44,14 @@ class GitInitAction extends AbstractAction implements ActionInterface
 
         $this->createHooks($data->hooks, $data->path);
 
+        // HADRCODED TOTO to change it
+        Log::show("chown -R 1000 /var/opt/gitcity/git-data/");
+        $process = new Process("chown -R 1000 /var/opt/gitcity/git-data/");
+        $process->start();
+        while ($process->isRunning()) {
+            // waiting for process to finish
+        }
+
         return true;
     }
 
