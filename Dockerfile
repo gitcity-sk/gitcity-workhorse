@@ -6,6 +6,6 @@ WORKDIR /usr/src/unicorn
 COPY docker-entry.sh /usr/local/bin/docker-entry
 RUN chmod +x /usr/local/bin/docker-entry
 
-EXPOSE 8801
+EXPOSE 18801
 
 CMD ["docker-entry"]
