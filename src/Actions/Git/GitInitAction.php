@@ -50,9 +50,9 @@ class GitInitAction extends AbstractAction implements ActionInterface
     public function createHooks($hooksPath, $repoPath)
     {
         //Log::show("rm -r $repoPath/hooks");
-        $command = "ln -fs $hooksPath $repoPath/hooks"
+        $command = "ln -fs $hooksPath $repoPath/hooks";
         Log::show($command);
-        
+
         $process = new Process($command);
         $process->start();
         while ($process->isRunning()) {
