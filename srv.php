@@ -17,7 +17,7 @@
 require_once 'vendor/autoload.php';
 require_once 'config/paths.php';
 
-$server = new \MayMeow\Cloud\Sockets\SocketServer('tcp://0.0.0.0:88001');
+$server = new \MayMeow\Cloud\Sockets\SocketServer('tcp://0.0.0.0:8801');
 
 /*$server->actions = [
     'Ping' => new \MayMeow\Actions\Ping(),
